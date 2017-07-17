@@ -20,6 +20,11 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+
+            // modificacion
+            $table->string('tipo_de_id', 20)->nullable();
+            $table->string('numero_id', 20)->nullable();
+            $table->text('localizacion')->nullable(); // en formato json
         });
     }
 
