@@ -19,7 +19,7 @@ class Basic extends Migration
             $table->boolean('estado')->default(true);
             $table->timestamps();
             $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');            
+            $table->foreign('user_id')->references('id')->on('users');
             
             $table->string('nombre');
             $table->string('palabras_clave');
