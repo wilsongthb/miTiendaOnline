@@ -1,6 +1,6 @@
 <?php
 return [
-    'por_pagina' => 12,
+    'por_pagina' => 24,
     'localizacion_map' => [
         'pais',
         'region',

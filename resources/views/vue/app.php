@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><?= config('app.name') ?></a>
+            <a class="navbar-brand" href="<?= url('') ?>"><?= config('app.name') ?></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -37,6 +37,37 @@
                     </ul>
                 </li>
             </ul> -->
+            <!-- Right Side Of Navbar -->
+            <ul class="nav navbar-nav navbar-right">
+                <!-- Authentication Links -->
+                <?php if(Auth::guest()){ ?>
+                    <li><a href="<?= route('login') ?>">Login</a></li>
+                    <li><a href="<?= route('register') ?>">Register</a></li>
+                <?php }else{ ?>
+                    <li>
+                        <router-link to="/misproductos">Mis productos</router-link>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <?= Auth::user()->name ?> <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="<?= route('logout') ?>"
+                                    onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                    Logout
+                                </a>
+
+                                <form id="logout-form" action="<?= route('logout') ?>" method="POST" style="display: none;">
+                                    <?= csrf_field() ?>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                <?php } ?>
+            </ul>
         </div>
     </nav>
 
@@ -44,18 +75,17 @@
 </div>
 </template>
 <script>
+// RUTAS DEL COMPONENTE
+const router = new VueRouter({
+    mode: 'history',
+    routes: [
+        { path: '/', component: productos },
+        { path: '/productos', component: productos },
+        { path: '/misproductos', component: misproductos }
+    ]
+})
 const app = {
     router,
-    template: '#app-template',
-    // data () {
-    //     return {
-    //         buscar: '',
-    //         // laravelData: {},
-    //         // pagina: 1,
-            
-    //         // productos: []
-    //     }
-    // },
-
+    template: '#app-template'
 }
 </script>

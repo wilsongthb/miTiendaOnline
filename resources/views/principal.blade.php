@@ -35,8 +35,8 @@
         {{--  component scripts  --}}
         @include('vue.producto')
         @include('vue.productos')
+        @include('vue.misproductos')
         {{--  code scripts  --}}
-        @include('vue.rutas')
         @include('vue.app')
         <script src="{{ asset('js/vue-root.js') }}"></script>
     </body>

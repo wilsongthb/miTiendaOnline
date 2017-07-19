@@ -11,8 +11,9 @@
 |
 */
 
-Route::get('/{i1?}/{i2?}/', function(){ return view('principal'); });
+// Route::get('/{i1?}/{i2?}/', function(){ return view('principal'); });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/{i1?}/{i2?}/', function(){ return view('principal'); });

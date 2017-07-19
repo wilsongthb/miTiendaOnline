@@ -19,6 +19,7 @@ class productosRsrc extends Controller
             $registros->where('nombre', 'LIKE', "%$request->search%");
         }
         return $registros->paginate(config('constantes.por_pagina'));
+        // return $registros->paginate(14);
     }
 
     /**
