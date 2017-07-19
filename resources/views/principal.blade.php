@@ -30,8 +30,20 @@
         <script src="{{ asset('node_modules/vue-resource/dist/vue-resource.js') }} "></script>
 
         {{--  scripts de la aplicacion  --}}
-        <script>module = {}</script>
-        <script src="{{ asset('node_modules/laravel-vue-pagination/src/laravel-vue-pagination.js') }} "></script>
+        <script>
+        const APP_C = {
+            // ruta de la pagina,
+            url: '{{ url('') }}',
+            
+            @if (!Auth::guest())
+            user_id: {{ Auth::user()->id }} 
+            @endif
+            
+            
+        }
+        
+        </script>
+        <script src="{{ asset('js/laravel-vue-pagination/src/laravel-vue-pagination.js') }} "></script>
         {{--  component scripts  --}}
         @include('vue.producto')
         @include('vue.productos')

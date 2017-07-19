@@ -17,13 +17,25 @@ const misproductos = {
     template: '#misproductos',
     data () {
         return {
-
+            lista: [],
+            laravelData: {}
         }
     },
     methods: {
         leer () {
-            http.$get('/api/')
+            this.$http.get('/api/misproductos').then(
+                // success
+                response => {
+                    this.lista = response.data.data
+                    this.laravelData = response.data
+
+                    console.log(this.lista)
+                }
+            )
         }
+    },
+    created () {
+        this.leer()
     }
 }
 </script>
