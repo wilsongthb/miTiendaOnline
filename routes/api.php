@@ -19,3 +19,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::resource('productos', 'productosRsrc');
 Route::resource('misproductos', 'misproductosRsrc');
+Route::get('cuenta', 'cuentaController@index');
+Route::put('cuenta/user', 'cuentaController@user');
+Route::put('cuenta/vendedor', 'cuentaController@vendedor');
+Route::put('cuenta/clave', 'cuentaController@clave');
+Route::post('compras', 'transaccionesController@store');

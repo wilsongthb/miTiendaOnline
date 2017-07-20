@@ -7,7 +7,8 @@
         <title>{{config('app.name')}} </title>
 
         <!-- Bootstrap CSS -->
-         <link rel="stylesheet" href="{{ asset('node_modules/bootstrap/dist/css/bootstrap.css') }} "> 
+         <link rel="stylesheet" href="{{ asset('node_modules/bootstrap/dist/css/bootstrap.css') }} ">
+         <link rel="stylesheet" href="{{ asset('font-awesome-4.7.0/css/font-awesome.css') }} "> 
         {{--  <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }} ">  --}}
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -32,24 +33,33 @@
         {{--  scripts de la aplicacion  --}}
         <script>
         const APP_C = {
-            // ruta de la pagina,
-            url: '{{ url('') }}',
-            
-            @if (!Auth::guest())
-            user_id: {{ Auth::user()->id }} 
-            @endif
-            
-            
+        // ruta de la pagina,
+        url: '{{ url('') }}',
+        user: {!! json_encode(Auth::user()) !!},
+        auth_guest: {{ Auth::guest() ? true : "null" }},
+        csrf_field: '{{ csrf_field() }}',
+        csrf_token: '{{ csrf_token() }}',
+        @if (!Auth::guest())
+        user_id: {{ Auth::user()->id }},
+        @endif
         }
-        
+        var carrito = []
         </script>
         <script src="{{ asset('js/laravel-vue-pagination/src/laravel-vue-pagination.js') }} "></script>
-        {{--  component scripts  --}}
-        @include('vue.producto')
-        @include('vue.productos')
-        @include('vue.misproductos')
-        {{--  code scripts  --}}
-        @include('vue.app')
+
+
+{{--  component scripts  --}}
+@include('vue.componente')
+@include('vue.producto.ver')
+@include('vue.productos')
+@include('vue.misproductos.index')
+@include('vue.misproductos.create')
+@include('vue.cuenta')
+@include('vue.producto.detalle')
+@include('vue.carrito')
+{{--  code scripts  --}}
+@include('vue.app')
+        
         <script src="{{ asset('js/vue-root.js') }}"></script>
     </body>
 </html>

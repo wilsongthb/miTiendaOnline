@@ -1,13 +1,13 @@
-<template id="">
-    <div>
-        componente
-    </div>
+<template id="componente">
+    <pre>
+        Componente
+    </pre>
 </template>
 <script>
 const componente = {
-    routes: [
-
-    ],
-    template: '#'
+    template: '#componente',
+    props: {
+        buscar: String
+    }
 }
 </script>

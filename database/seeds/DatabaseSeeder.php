@@ -25,10 +25,10 @@ class DatabaseSeeder extends Seeder
                 'palabras_clave' => $faker->word.';'.$faker->word.';'.$faker->word.';',
                 'metadatos' => json_encode($faker->words(10)),
                 'descripcion' => $faker->text,
-                'precio' => $faker->randomFloat(2, 10, 10000),
-                'cantidad' => $faker->randomNumber(4),
+                'precio' => $faker->randomFloat(2, 10, 30),
+                'cantidad' => $faker->randomNumber(2),
                 'user_id' => $faker->numberBetween(1, 50),
-                // 'image_url' => $faker->imageUrl(200, 200, 'cats', true, 'Faker'),
+                'image_url' => $faker->imageUrl(200, 200, 'cats', true, 'Faker'),
 
                 'created_at' => $faker->dateTime(),
                 'updated_at' => $faker->dateTime()
@@ -40,10 +40,11 @@ class DatabaseSeeder extends Seeder
                 'palabras_clave' => $faker->word.';'.$faker->word.';'.$faker->word.';',
                 'metadatos' => json_encode($faker->words(10)),
                 'descripcion' => $faker->text,
-                'precio' => $faker->randomFloat(2, 10, 10000),
-                'cantidad' => $faker->randomNumber(4),
+                'precio' => $faker->randomFloat(2, 10, 30),
+                'cantidad' => $faker->randomNumber(1),
                 'user_id' => $faker->numberBetween(1, 50),
                 // 'image_url' => $faker->imageUrl(200, 200, 'abstract', true, 'Faker'),
+                'image_url' => '/imagenes/default.jpg',
 
                 'created_at' => $faker->dateTime(),
                 'updated_at' => $faker->dateTime()

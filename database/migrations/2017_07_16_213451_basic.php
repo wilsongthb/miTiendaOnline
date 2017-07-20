@@ -42,7 +42,7 @@ class Basic extends Migration
             $table->string('codigo_postal', 10);
             $table->string('direccion');
             $table->string('ruc');
-            $table->string('RAZON SOCIAL', 500);
+            $table->string('razon_social', 500);
 
             // PRINCIPAL RESPONSABLE
             $table->string('nombres');
@@ -64,7 +64,7 @@ class Basic extends Migration
             
             $table->string('nombre');
             $table->string('palabras_clave');
-            $table->string('metadatos', 500);
+            $table->string('metadatos', 500)->null;//json
             $table->text('descripcion')->nullable();
             $table->float('precio', 10, 2)->nullable()->default(0); // precio por unidad
             $table->integer('cantidad')->unsigned()->default(1);
@@ -109,7 +109,7 @@ class Basic extends Migration
             $table->increments('id');
             $table->boolean('estado')->default(true);
             $table->timestamps();
-            $table->integer('user_id')->unsigned();
+            $table->integer('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('users');
 
             $table->string('pais');
@@ -129,7 +129,7 @@ class Basic extends Migration
             $table->increments('id');
             $table->boolean('estado')->default(true);
             $table->timestamps();
-            $table->integer('user_id')->unsigned();
+            $table->integer('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             
             $table->integer('cantidad')->unsigned()->default(1);
