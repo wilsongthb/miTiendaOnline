@@ -37,6 +37,9 @@
                     <li>
                         <router-link to="/misproductos">Mis productos</router-link>
                     </li>
+                    <li>
+                        <router-link to="/misventas">Mis Ventas</router-link>
+                    </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             <?= Auth::user()->name ?> <span class="caret"></span>
@@ -78,7 +81,8 @@ const router = new VueRouter({
         { path: '/misproductos', component: misproductos },
         { path: '/misproductos/agregar', component: misproductos_agregar },
         { path: '/producto/:id', component: producto_detalle, props: true },
-        { path: '/carrito', component: carrito_component }
+        { path: '/carrito', component: carrito_component },
+        { path: '/misventas', component: misventas }
         // { path: '/componente', component: componente }
     ]
 })

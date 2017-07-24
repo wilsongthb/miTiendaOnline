@@ -24,3 +24,5 @@ Route::put('cuenta/user', 'cuentaController@user');
 Route::put('cuenta/vendedor', 'cuentaController@vendedor');
 Route::put('cuenta/clave', 'cuentaController@clave');
 Route::post('compras', 'transaccionesController@store');
+// Route::resource('compras', 'comprasRsrs');
+Route::get('compras', 'comprasRsrc@index');

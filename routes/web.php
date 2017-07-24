@@ -17,4 +17,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/comprobante/{id}', 'comprobanteCtrl@index');
 Route::get('/{i1?}/{i2?}/{i3?}/{i4?}/{i5?} ', function(){ return view('principal'); });

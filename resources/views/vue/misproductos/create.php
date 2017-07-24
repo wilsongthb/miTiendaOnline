@@ -18,7 +18,7 @@
         </div>
         <div class="form-group">
             <label>Metadatos</label>
-            <textarea v-model="registro.metadatos" name="metadatos" class="form-control" rows="2"></textarea>
+            <textarea v-model="registro.metadatos" name="metadatos" class="form-control" rows="2" required></textarea>
         </div>
         <div class="form-group">
             <label>Descripcion</label>

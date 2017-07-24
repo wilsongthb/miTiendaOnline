@@ -57,6 +57,7 @@
 @include('vue.cuenta')
 @include('vue.producto.detalle')
 @include('vue.carrito')
+@include('vue.transacciones.misventas')
 {{--  code scripts  --}}
 @include('vue.app')
         
