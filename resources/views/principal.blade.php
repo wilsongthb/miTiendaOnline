@@ -7,7 +7,8 @@
         <title>{{config('app.name')}} </title>
 
         <!-- Bootstrap CSS -->
-         <link rel="stylesheet" href="{{ asset('node_modules/bootstrap/dist/css/bootstrap.css') }} ">
+         {{--  <link rel="stylesheet" href="{{ asset('node_modules/bootstrap/dist/css/bootstrap.css') }} ">  --}}
+         <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }} ">
          <link rel="stylesheet" href="{{ asset('font-awesome-4.7.0/css/font-awesome.css') }} "> 
         {{--  <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }} ">  --}}
 
@@ -24,11 +25,17 @@
             <app></app>
         </div>
 
-        <script src="{{ asset('node_modules/vue/dist/vue.js') }}"></script>
+        {{--  <script src="{{ asset('node_modules/vue/dist/vue.js') }}"></script>
         <script src="{{ asset('node_modules/vue-router/dist/vue-router.js') }}"></script>
         <script src="{{ asset('node_modules/jquery/dist/jquery.js') }}"></script>
         <script src="{{ asset('node_modules/bootstrap/dist/js/bootstrap.js') }}"></script>
-        <script src="{{ asset('node_modules/vue-resource/dist/vue-resource.js') }} "></script>
+        <script src="{{ asset('node_modules/vue-resource/dist/vue-resource.js') }} "></script>  --}}
+        <script src="{{ asset('js/vue.min.js') }} "></script>
+        <script src="{{ asset('js/vue-router.min.js') }} "></script>
+        <script src="{{ asset('js/jquery.min.js') }} "></script>
+        <script src="{{ asset('js/bootstrap.min.js') }} "></script>
+        <script src="{{ asset('js/vue-resource.min.js') }} "></script>
+        
 
         {{--  scripts de la aplicacion  --}}
         <script>
