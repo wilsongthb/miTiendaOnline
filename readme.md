@@ -1,4 +1,4 @@
-Instalacion:
+# Instalacion:
 
 - Instalar git
 - Instalar xampp
